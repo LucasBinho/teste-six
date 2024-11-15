@@ -19,7 +19,7 @@ export default function App() {
     setSelectedProductId(null);
   };
 
-  // Fetch para buscar os dados da API
+
   useEffect(() => {
     async function fetchData() {
       try {
@@ -80,12 +80,10 @@ export default function App() {
       </section>
 
       <section className="p-6">
-        {/* Headline */}
         <h1 className="text-5xl font-semibold text-center mb-10">
           Nossos Produtos:
         </h1>
 
-        {/* Grid de Produtos */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 justify-center gap-6">
           {data.products && data.products.length > 0 ? (
             data.products.map((product) => (
@@ -93,7 +91,6 @@ export default function App() {
                 key={product.product_id}
                 className="bg-white p-4 rounded-lg shadow-lg "
               >
-                {/* Imagem do produto */}
                 <div className="overflow-hidden rounded-lg mb-4 hover:shadow-xl transition-transform transform hover:scale-105">
                   <img
                     src={product.image_url}
@@ -101,7 +98,6 @@ export default function App() {
                     className="w-full h-40 object-cover transition-transform duration-300 transform hover:scale-110"
                   />
                 </div>
-                {/* Nome e Descrição */}
                 <h3 className="text-xl font-bold mb-2">{product.name}</h3>
                 <div className="flex gap-2">
                   <p className="price mb-2">R$ {product.price}</p>
